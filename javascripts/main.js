@@ -7,14 +7,9 @@ const writeToDom = (data) => {
     let treeHouseString = "";
     for (let i = 0; i < data.badges.length; i++) {
         currentTreeHouse = data.badges[i];
-
-        treeHouseString += `<div class="col-sm-6 col-md-4">`;
-        treeHouseString += `<div class="thumbnail">`;
+        // treeHouseString += `<div class="container">`;
         treeHouseString += `<img src="${currentTreeHouse.icon_url}" alt="tree">`;
-        treeHouseString += `<div class="caption">`;
-        treeHouseString += `<h3>${currentTreeHouse.id}</h3>`;
-        treeHouseString += `<p>is a ${currentTreeHouse.name}</p>`;
-        treeHouseString += `</div></div></div>`;
+        // treeHouseString += `</div>`;
 
     }
     treeContainer.innerHTML = treeHouseString;
@@ -32,9 +27,14 @@ const writeToDom = (data) => {
         });
 
 
+$('#clearButton').click(() => {
+	$('#treeContainer').animate({
+    height: "toggle"
+	});
+});
 
 
-module.exports = {writeToDom};
+
 
 
 
